@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-size-multiplier: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,10 +15,18 @@
   }
 }
 
+@media (max-width: 640px) {
+  :root {
+    --font-size-multiplier: 0.9;
+  }
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background-color: var(--background);
+  font-family: 'Libre Bodoni', serif;
+  letter-spacing: 0.02em;
+  font-size: calc(1rem * var(--font-size-multiplier));
 }
 
 @layer utilities {
@@ -25,3 +34,159 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Remove the @layer base section that was adding borders */
+
+.group:hover .group-hover\:translate-x-5 {
+  transform: translateX(0.625rem); /* Changed from 1.25rem to 0.625rem (10px) */
+}
+
+.greyscale-hover {
+  filter: grayscale(100%) brightness(1.2);
+  transition: filter 0.1s ease-in-out;
+}
+
+.greyscale-hover:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+.icon-color {
+  filter: invert(20%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(94%) contrast(89%);
+  transition: filter 0.1s ease-in-out;
+}
+
+.icon-color:hover {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(0%) contrast(100%);
+}
+
+/* Update this class for the work card */
+.work-card-text {
+  letter-spacing: 0.04em; /* This sets 4% letter spacing for the work card */
+}
+
+/* Add this new class for the work card border */
+.work-card {
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.work-card:hover {
+  border-color: black;
+}
+
+/* Update this selector to target the new class */
+.group:hover .work-card {
+  transform: translateX(0.625rem);
+}
+
+.contact-card {
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  justify-content: center !important; /* Always center content */
+  text-align: center !important; /* Always center text */
+}
+
+.contact-card:hover {
+  border-color: black;
+}
+
+.contact-card span {
+  text-align: center !important; /* Ensure text is always centered */
+}
+
+/* Remove this rule entirely as we don't want the contact cards to move */
+/* .group:hover .contact-card {
+  transform: translateX(0.625rem);
+} */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards; /* Changed from 2s to 0.5s */
+  opacity: 0;
+}
+
+/* Update these classes for different animation delays */
+.delay-100 { animation-delay: 0.1s; }  /* Changed from 0.4s to 0.1s */
+.delay-200 { animation-delay: 0.2s; }  /* Changed from 0.8s to 0.2s */
+.delay-300 { animation-delay: 0.3s; }  /* Changed from 1.2s to 0.3s */
+.delay-400 { animation-delay: 0.4s; }  /* Changed from 1.6s to 0.4s */
+.delay-500 { animation-delay: 0.5s; }  /* Changed from 2s to 0.5s */
+
+/* Add these new utility classes */
+.text-xl {
+  font-size: calc(1.25rem * var(--font-size-multiplier));
+}
+
+.text-2xl {
+  font-size: calc(1.5rem * var(--font-size-multiplier));
+}
+
+/* Add this with the other text size classes */
+.text-sm {
+  font-size: calc(0.875rem * var(--font-size-multiplier));
+}
+
+/* Add this at the end of the file */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 90%; /* Makes all text 10% smaller */
+  }
+
+  .work-card {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .work-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 90%; /* Makes all text 10% smaller */
+  }
+
+  .work-card {
+    transition: box-shadow 0.3s ease-in-out;
+    width: 100% !important; /* Force 100% width */
+  }
+
+  .work-card:hover {
+    transform: none !important; /* Prevent movement on hover */
+  }
+
+  .contact-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .contact-item {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  .contact-card {
+    padding: 1rem !important;
+    height: 100% !important;
+  }
+
+  /* Remove or comment out this rule as it's now redundant */
+  /* .contact-card span {
+    text-align: center !important;
+  } */
+}
+
+/* ... rest of the existing styles ... */
+
