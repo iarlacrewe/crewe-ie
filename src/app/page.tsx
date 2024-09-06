@@ -23,10 +23,10 @@ export default function Home() {
         
         <div className="mb-16 animate-fade-in-up delay-300">
           <h3 className="text-xl font-semibold mb-5">Work</h3>
-          <div className="w-full sm:w-2/3"> {/* Changed from w-2/3 to be responsive */}
-            <a href="https://quartzpay.io/" className="block relative group">
-              <div className="flex items-center p-4 w-full work-card group-hover:shadow-md sm:group-hover:translate-x-2.5">
-                <div className="w-12 h-12 relative greyscale-hover">
+          <div className="w-full sm:w-2/3">
+            <div className="work-card-container">
+              <a href="https://quartzpay.io/" className="relative flex items-center p-4 w-full work-card">
+                <div className="w-12 h-12 greyscale-hover">
                   <Image
                     src="/quartz-logo.svg"
                     alt="Quartz"
@@ -38,9 +38,8 @@ export default function Home() {
                   <span className="block">Quartz</span>
                   <span className="block text-sm opacity-85">The DeFi checking account</span>
                 </div>
-              </div>
-              <div className="absolute inset-0 w-10 -left-2.5 group-hover:left-0 transition-all duration-300 ease-in-out"></div>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
         

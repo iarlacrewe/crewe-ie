@@ -37,10 +37,6 @@ body {
 
 /* Remove the @layer base section that was adding borders */
 
-.group:hover .group-hover\:translate-x-5 {
-  transform: translateX(0.625rem); /* Changed from 1.25rem to 0.625rem (10px) */
-}
-
 .greyscale-hover {
   filter: grayscale(100%) brightness(1.2);
   transition: filter 0.1s ease-in-out;
@@ -59,24 +55,28 @@ body {
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(0%) contrast(100%);
 }
 
-/* Update this class for the work card */
-.work-card-text {
-  letter-spacing: 0.04em; /* This sets 4% letter spacing for the work card */
+/* Work card styles */
+.work-card-container {
+  position: relative;
+  padding-left: 10px;
+  margin-left: -10px;
 }
 
-/* Add this new class for the work card border */
 .work-card {
   border: 1px solid transparent;
   transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.work-card:hover {
+/* Consolidated hover effects */
+.work-card-container:hover .work-card {
   border-color: black;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateX(0.625rem);
 }
 
-/* Update this selector to target the new class */
-.group:hover .work-card {
-  transform: translateX(0.625rem);
+/* Work card text styles */
+.work-card-text {
+  letter-spacing: 0.04em;
 }
 
 .contact-card {
@@ -93,11 +93,6 @@ body {
 .contact-card span {
   text-align: center !important; /* Ensure text is always centered */
 }
-
-/* Remove this rule entirely as we don't want the contact cards to move */
-/* .group:hover .contact-card {
-  transform: translateX(0.625rem);
-} */
 
 @keyframes fadeInUp {
   from {
@@ -136,22 +131,6 @@ body {
   font-size: calc(0.875rem * var(--font-size-multiplier));
 }
 
-/* Add this at the end of the file */
-
-@media (max-width: 640px) {
-  body {
-    font-size: 90%; /* Makes all text 10% smaller */
-  }
-
-  .work-card {
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  .work-card:hover {
-    transform: none;
-  }
-}
-
 @media (max-width: 520px) {
   body {
     font-size: 90%; /* Makes all text 10% smaller */
@@ -182,11 +161,4 @@ body {
     height: 100% !important;
   }
 
-  /* Remove or comment out this rule as it's now redundant */
-  /* .contact-card span {
-    text-align: center !important;
-  } */
 }
-
-/* ... rest of the existing styles ... */
-
