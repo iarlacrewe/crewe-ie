@@ -36,7 +36,7 @@ export default function Home() {
                 </div>
                 <div className="ml-5 work-card-text">
                   <span className="block">Quartz</span>
-                  <span className="block text-sm opacity-85">The DeFi checking account</span>
+                  <span className="block text-sm opacity-85">Spend your crypto without selling</span>
                 </div>
               </a>
             </div>
