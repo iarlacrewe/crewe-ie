@@ -26,12 +26,12 @@ export default function Home() {
           <div className="w-full sm:w-2/3">
             <div className="work-card-container">
               <a href="https://quartzpay.io/" className="relative flex items-center p-4 w-full work-card">
-                <div className="w-12 h-12 greyscale-hover">
+                <div className="w-12 h-12 greyscale-hover relative flex-shrink-0">
                   <Image
                     src="/quartz-logo.svg"
                     alt="Quartz"
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    className="object-contain"
                   />
                 </div>
                 <div className="ml-5 work-card-text">
