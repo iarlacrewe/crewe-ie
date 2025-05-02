@@ -16,44 +16,44 @@ export default function Home() {
               objectFit="cover"
             />
           </div>
-          
+
           <h1 className="text-2xl font-bold mt-4 animate-fade-in-up delay-100">Iarla Crewe</h1>
           <h2 className="text-xl mt-2 animate-fade-in-up delay-200">Cofounder, COO</h2>
         </div>
-        
+
         <div className="mb-16 animate-fade-in-up delay-300">
           <h3 className="text-xl font-semibold mb-5">Work</h3>
-          <div className="w-full sm:w-2/3">
+          <div className="w-full">
             <div className="work-card-container">
-              <a href="https://quartzpay.io/" className="relative flex items-center p-4 w-full work-card">
+              <a href="https://pyra.fi/" className="relative flex items-center p-4 w-full work-card">
                 <div className="w-12 h-12 greyscale-hover relative flex-shrink-0">
                   <Image
-                    src="/quartz-logo.svg"
-                    alt="Quartz"
+                    src="/pyra-logo.svg"
+                    alt="Pyra"
                     fill
                     className="object-contain"
                   />
                 </div>
                 <div className="ml-5 work-card-text">
-                  <span className="block">Quartz</span>
-                  <span className="block text-sm opacity-85">Spend your crypto without selling</span>
+                  <span className="block">Pyra</span>
+                  <span className="block text-sm opacity-85">Hold assets, earn yield, <span className="whitespace-nowrap">spend cash</span></span>
                 </div>
               </a>
             </div>
           </div>
         </div>
-        
+
         <div className="animate-fade-in-up delay-400">
           <h3 className="text-xl font-semibold mb-5">Contact me</h3>
           <div className="flex flex-wrap justify-between contact-container">
-            {[{ text: "Email", href: "mailto:iarla@quartzpay.io" },
-              { text: "X / Twitter", href: "https://x.com/iarlacrewe" },
-              { text: "LinkedIn", href: "https://www.linkedin.com/in/iarla-crewe/" },
-              { text: "GitHub", href: "https://github.com/iarla-crewe" }              
+            {[{ text: "Email", href: "mailto:iarla@pyra.fi" },
+            { text: "X / Twitter", href: "https://x.com/iarlacrewe" },
+            { text: "LinkedIn", href: "https://www.linkedin.com/in/iarla-crewe/" },
+            { text: "GitHub", href: "https://github.com/iarla-crewe" }
             ].map((contact, i) => (
-              <a 
-                key={i} 
-                href={contact.href} 
+              <a
+                key={i}
+                href={contact.href}
                 className="block relative w-[23%] animate-fade-in-up contact-item"
                 style={{ animationDelay: `${0.5 + i * 0.1}s` }}
               >
