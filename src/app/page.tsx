@@ -18,7 +18,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-2xl font-bold mt-4 animate-fade-in-up delay-100">Iarla Crewe</h1>
-          <h2 className="text-xl mt-2 animate-fade-in-up delay-200">Cofounder, COO</h2>
+          <h2 className="text-xl mt-2 animate-fade-in-up delay-200">Co-founder & CTO</h2>
         </div>
 
         <div className="mb-16 animate-fade-in-up delay-300">
