@@ -48,8 +48,8 @@ export default function Home() {
           <div className="flex flex-wrap justify-between contact-container">
             {[{ text: "Email", href: "mailto:iarla@pyra.fi" },
             { text: "X / Twitter", href: "https://x.com/iarlacrewe" },
-            { text: "LinkedIn", href: "https://www.linkedin.com/in/iarla-crewe/" },
-            { text: "GitHub", href: "https://github.com/iarla-crewe" }
+            { text: "LinkedIn", href: "https://www.linkedin.com/in/iarlacrewe/" },
+            { text: "GitHub", href: "https://github.com/iarlacrewe" }
             ].map((contact, i) => (
               <a
                 key={i}
